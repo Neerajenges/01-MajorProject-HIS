@@ -1,0 +1,8 @@
+# by default port we need not to register the other api ,it will automatically registerd
+server:
+  port: 8761
+#this project will not register with Eureka  
+eureka:
+  client:
+    register-with-eureka: false 
+    
