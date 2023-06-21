@@ -1,7 +1,9 @@
 package com.eg.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -55,13 +57,14 @@ public class DcServiceImpl implements DcService {
 	}
 
 	@Override
-	public List<String> getPlanName() {
+	public Map<Integer, String> getPlanNames() {
 		List<PlanEntity> findAll = planRepo.findAll();
-		List<String> plans= new ArrayList<>();
+		
+		Map<Integer,String> plansMap=new HashMap<>();
 		for(PlanEntity entity :findAll) {
-			plans.add(entity.getPlanName());
+			plansMap.put(entity.getPlanID(), entity.getPlanName());
 		}
-		return null;
+		return plansMap;
 	}
 
 	@Override
