@@ -1,9 +1,8 @@
 package com.eg.service;
 
-import java.util.List;
 import java.util.Map;
 
-import com.eg.binding.Child;
+import com.eg.binding.ChildRequest;
 import com.eg.binding.DcSummary;
 import com.eg.binding.Education;
 import com.eg.binding.Income;
@@ -21,7 +20,7 @@ public interface DcService {
 	
 	public Long saveEducation(Education education);
 	
-	public Long saveChildren(List<Child> childs);
+	public Long saveChildren(ChildRequest request);
 	
 	public DcSummary getSummary(Long caseNumber);
 	

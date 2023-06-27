@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.eg.binding.Child;
+import com.eg.binding.ChildRequest;
 import com.eg.binding.DcSummary;
 import com.eg.binding.Education;
 import com.eg.binding.Income;
@@ -104,13 +105,17 @@ public class DcServiceImpl implements DcService {
 	}
 
 	@Override
-	public Long saveChildren(List<Child> childs) {
+	public Long saveChildren(ChildRequest request) {
+		List<Child> childs = request.getChilds();
+		Long caseNum = request.getCaseNum();
 		for(Child c:childs) {
 			DcChildrenEntity entity=new DcChildrenEntity();
 			BeanUtils.copyProperties(c, entity);
+			entity.setCaseNum(caseNum);
 			childRepo.save(entity);
 		}
-		return childs.get(0).getCaseNum();
+//		childRepo.saveAll(entities);//saving children all at a time
+		return request.getCaseNum();
 	}
 
 	@Override
