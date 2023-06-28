@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 9097
 
 
 #database configuration 
@@ -21,17 +21,3 @@ spring:
     
 #spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
    
-
-plan-api:
- messages:
-  planSaveSucc: Plan saved Sucessfully
-  planSaveFail: Plan save Failed
-  planUpdateSucc: Plan update Sucessfully
-  planUpdateFail: Plan update Failed
-  planDeleteSucc: Plan Deleted Sucessfully
-  planDeleteFail: Plan Delete Fail
-  planStatusChangeSucc: Plan Status changed Successfully
-  planStatusChangeFail: Plan Status Change Failed
-  
-
-     
