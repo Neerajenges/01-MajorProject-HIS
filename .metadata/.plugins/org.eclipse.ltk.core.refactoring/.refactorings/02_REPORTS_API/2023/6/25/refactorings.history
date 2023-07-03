@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.eg.config&apos; to &apos;10_DC_API/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;02_REPORTS_API&apos;&#x0D;&#x0A;- Destination element: &apos;10_DC_API/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;02_REPORTS_API/src/main/java/com.eg.config&apos;" description="Copy package" destination="=10_DC_API/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.eg.config" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1687496056936" version="1.0"/>
+</session>

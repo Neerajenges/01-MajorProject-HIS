@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.eg.utils&apos; to &apos;12_CO_API/src/main/java/com.eg&apos;&#x0D;&#x0A;- Original project: &apos;03_USER_MGMT_APP&apos;&#x0D;&#x0A;- Destination element: &apos;12_CO_API/src/main/java/com.eg&apos;&#x0D;&#x0A;- Original element: &apos;03_USER_MGMT_APP/src/main/java/com.eg.utils&apos;" description="Copy package" destination="=12_CO_API/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.eg" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.eg.utils" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1688361424585" version="1.0"/>
+</session>
