@@ -7,10 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorCompletionService;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,30 +55,16 @@ public class CoServiceImpl implements CoService {
 		// fetch all the pending triggers
 		List<CoTriggerEntity> pendingTrgs = coTrgRepo.findByTrgStatus("pending");
 		response.setTotalTriggers(Long.valueOf(pendingTrgs.size()));// converting int to long
-		
-		ExecutorService executorService=Executors.newFixedThreadPool(10);
-		ExecutorCompletionService<Object> pool=new ExecutorCompletionService<>(executorService);
-		
-		
-		for(CoTriggerEntity entity:pendingTrgs) {
-			pool.submit(new Callable<Object>() {
-				@Override
-				public Object call() throws Exception {
-					try {
-						processTrigger(response, entity);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-					return null;
-				}
-				
-			});
-			
-		}
 
 		// process each pending triggers
 		for (CoTriggerEntity entity : pendingTrgs) {
-			
+			try {
+				processTrigger(response, entity);
+				success++;
+			} catch (Exception e) {
+				e.printStackTrace();
+				failed++;
+			}
 
 		}
 		response.setSuccTriggers(success);
