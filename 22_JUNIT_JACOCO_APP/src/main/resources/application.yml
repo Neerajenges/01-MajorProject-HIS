@@ -1,0 +1,46 @@
+server:
+  port: 9696
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: neerajeg
+    url: dbc:mysql://localhost:3306/UserMgmt
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  mail:
+    host: smtp.gmail.com
+    password: abc@123
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    username: engineersgesture@gmail.com
+reg-app: 
+  messages:
+    regMailSubject: User Registration Success
+    regMailBodyTemplateFile: UNLOCK-ACC-EMAIL-BODY-TEMPLATE.txt
+    
+    
+
+  
+
+          
+    
+
+    
+
+
+
+
+
+
+  
